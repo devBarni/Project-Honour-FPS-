@@ -1,0 +1,144 @@
+[gd_scene load_steps=11 format=3 uid="uid://dvmt0c8ibmhoa"]
+
+[ext_resource type="Script" path="res://Scripts/Player.cs" id="1_4lej8"]
+[ext_resource type="Texture2D" uid="uid://qnup3a3adiq3" path="res://Assets/Sprites/gun_sprites.png" id="1_o22c8"]
+[ext_resource type="AudioStream" uid="uid://dhm3ubgenow1p" path="res://Assets/Sounds/revolver_shot1.wav" id="3_pvplu"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hnpwf"]
+height = 1.98076
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s0rmp"]
+atlas = ExtResource("1_o22c8")
+region = Rect2(0, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gwsth"]
+atlas = ExtResource("1_o22c8")
+region = Rect2(0, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_83wcp"]
+atlas = ExtResource("1_o22c8")
+region = Rect2(512, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0mkr0"]
+atlas = ExtResource("1_o22c8")
+region = Rect2(1024, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bjvkf"]
+atlas = ExtResource("1_o22c8")
+region = Rect2(1536, 0, 512, 512)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5t3i2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s0rmp")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gwsth")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_83wcp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0mkr0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bjvkf")
+}],
+"loop": true,
+"name": &"shoot",
+"speed": 5.0
+}]
+
+[node name="Player" type="CharacterBody3D"]
+collision_layer = 2
+collision_mask = 3
+script = ExtResource("1_4lej8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_hnpwf")
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+target_position = Vector3(0, 0, -1000)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="GunBase" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/GunBase"]
+position = Vector2(788, 501)
+scale = Vector2(0.568359, 0.568359)
+sprite_frames = SubResource("SpriteFrames_5t3i2")
+animation = &"idle"
+frame_progress = 0.409372
+
+[node name="Crosshair" type="ColorRect" parent="CanvasLayer"]
+offset_left = 544.0
+offset_top = 317.0
+offset_right = 556.0
+offset_bottom = 329.0
+color = Color(0.929412, 0.929412, 0.929412, 0.290196)
+
+[node name="DeathScreen" type="Control" parent="CanvasLayer"]
+visible = false
+layout_mode = 3
+anchor_left = 0.478
+anchor_top = 0.5
+anchor_right = 0.478
+anchor_bottom = 0.5
+offset_left = -55.656
+offset_top = -34.0
+offset_right = 55.344
+offset_bottom = 26.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Panel" type="Panel" parent="CanvasLayer/DeathScreen"]
+layout_mode = 0
+offset_right = 111.0
+offset_bottom = 60.0
+
+[node name="Label" type="Label" parent="CanvasLayer/DeathScreen/Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -39.5
+offset_right = 39.5
+offset_bottom = 23.0
+grow_horizontal = 2
+text = "Zgon i elo."
+
+[node name="Button" type="Button" parent="CanvasLayer/DeathScreen/Panel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -32.5
+offset_top = -35.0
+offset_right = 32.5
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Restart"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_pvplu")
+bus = &"Sfx"
