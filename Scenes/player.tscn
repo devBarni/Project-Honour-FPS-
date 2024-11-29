@@ -5,7 +5,8 @@
 [ext_resource type="AudioStream" uid="uid://dhm3ubgenow1p" path="res://Assets/Sounds/revolver_shot1.wav" id="3_pvplu"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hnpwf"]
-height = 1.98076
+radius = 0.14419
+height = 1.66911
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_s0rmp"]
 atlas = ExtResource("1_o22c8")
@@ -49,18 +50,22 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_bjvkf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gwsth")
 }],
-"loop": true,
+"loop": false,
 "name": &"shoot",
-"speed": 5.0
+"speed": 10.0
 }]
 
-[node name="Player" type="CharacterBody3D"]
+[node name="Player" type="CharacterBody3D" groups=["player"]]
 collision_layer = 2
 collision_mask = 3
 script = ExtResource("1_4lej8")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.01575, 0.037854)
 shape = SubResource("CapsuleShape3D_hnpwf")
 
 [node name="RayCast3D" type="RayCast3D" parent="."]
@@ -68,7 +73,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 target_position = Vector3(0, 0, -1000)
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, -0.00563788)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -78,12 +83,13 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/GunBase"]
+[node name="GunAnimated" type="AnimatedSprite2D" parent="CanvasLayer/GunBase"]
+unique_name_in_owner = true
 position = Vector2(788, 501)
 scale = Vector2(0.568359, 0.568359)
 sprite_frames = SubResource("SpriteFrames_5t3i2")
-animation = &"idle"
-frame_progress = 0.409372
+animation = &"shoot"
+autoplay = "idle"
 
 [node name="Crosshair" type="ColorRect" parent="CanvasLayer"]
 offset_left = 544.0
@@ -122,7 +128,7 @@ offset_left = -39.5
 offset_right = 39.5
 offset_bottom = 23.0
 grow_horizontal = 2
-text = "Zgon i elo."
+text = "You died!"
 
 [node name="Button" type="Button" parent="CanvasLayer/DeathScreen/Panel"]
 layout_mode = 1
@@ -140,5 +146,6 @@ grow_vertical = 0
 text = "Restart"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
 stream = ExtResource("3_pvplu")
 bus = &"Sfx"
