@@ -1,0 +1,77 @@
+[gd_scene load_steps=3 format=3 uid="uid://ha1ib5b4lpyb"]
+
+[ext_resource type="Script" path="res://Scripts/MainMenu.cs" id="1_7m2l6"]
+[ext_resource type="PackedScene" uid="uid://b5ilmnkppoans" path="res://Scenes/texturebutton.tscn" id="2_x5i6d"]
+
+[node name="mainmenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7m2l6")
+
+[node name="background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.347817, 0.347817, 0.347817, 1)
+
+[node name="todo" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BackgroundMM" type="Sprite2D" parent="todo"]
+
+[node name="TitleMM" type="Sprite2D" parent="todo"]
+
+[node name="Author" type="Label" parent="todo"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="center_container" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -106.0
+offset_bottom = 106.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="v_box_menu" type="VBoxContainer" parent="center_container"]
+layout_mode = 2
+alignment = 1
+
+[node name="btn_start" parent="center_container/v_box_menu" instance=ExtResource("2_x5i6d")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+Text = "Start"
+
+[node name="btn_load" parent="center_container/v_box_menu" instance=ExtResource("2_x5i6d")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+Text = "Load"
+
+[node name="btn_options" parent="center_container/v_box_menu" instance=ExtResource("2_x5i6d")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+Text = "Options"
+
+[node name="btn_quit" parent="center_container/v_box_menu" instance=ExtResource("2_x5i6d")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+Text = "Quit"

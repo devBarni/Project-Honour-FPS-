@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://d3ttj3243s4o4"]
+
+[ext_resource type="Script" path="res://Scripts/TextureButton.cs" id="1_nq4fr"]
+
+[node name="Start" type="TextureButton"]
+script = ExtResource("1_nq4fr")

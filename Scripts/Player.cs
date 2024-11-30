@@ -1,5 +1,6 @@
 using Godot;
-using System;
+
+namespace Godotype2FPS.Scripts;
 
 public partial class Player : CharacterBody3D
 {
