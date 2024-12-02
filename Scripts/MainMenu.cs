@@ -34,6 +34,7 @@ public partial class MainMenu : Control
 
     private void OnStartPressed()
     {
+        GetTree().ChangeSceneToFile("res://Scenes/World.tscn");
         GD.Print("OnStartPressed");
     }
 
@@ -49,6 +50,7 @@ public partial class MainMenu : Control
 
     private void OnQuitPressed()
     {
+        GetTree().Quit();
         GD.Print("OnQuitPressed");
     }
 }

@@ -9,39 +9,39 @@ margin = 0.0
 radius = 0.416696
 height = 2.57364
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_txm0i"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_d02mv"]
 atlas = ExtResource("2_n6hui")
 region = Rect2(0, 256, 256, 256)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ur1nm"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_qchf0"]
 atlas = ExtResource("2_n6hui")
 region = Rect2(256, 256, 256, 256)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_7e8xx"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_8fdwl"]
 atlas = ExtResource("2_n6hui")
 region = Rect2(512, 256, 256, 256)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_t2nef"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_gn7x5"]
 atlas = ExtResource("2_n6hui")
 region = Rect2(768, 256, 256, 256)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_wsbr0"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_q0qp7"]
 atlas = ExtResource("2_n6hui")
 region = Rect2(1024, 256, 256, 256)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_jeh0e"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_55a52"]
 atlas = ExtResource("2_n6hui")
 region = Rect2(0, 0, 256, 256)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_hwnvl"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_mt212"]
 atlas = ExtResource("2_n6hui")
 region = Rect2(256, 0, 256, 256)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_rlnu8"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_tpxjn"]
 atlas = ExtResource("2_n6hui")
 region = Rect2(512, 0, 256, 256)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_4f8m3"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_ph86y"]
 atlas = ExtResource("2_n6hui")
 region = Rect2(768, 0, 256, 256)
 
@@ -49,19 +49,19 @@ region = Rect2(768, 0, 256, 256)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_txm0i")
+"texture": SubResource("AtlasTexture_d02mv")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ur1nm")
+"texture": SubResource("AtlasTexture_qchf0")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_7e8xx")
+"texture": SubResource("AtlasTexture_8fdwl")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_t2nef")
+"texture": SubResource("AtlasTexture_gn7x5")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_wsbr0")
+"texture": SubResource("AtlasTexture_q0qp7")
 }],
 "loop": false,
 "name": &"death",
@@ -69,16 +69,16 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_jeh0e")
+"texture": SubResource("AtlasTexture_55a52")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_hwnvl")
+"texture": SubResource("AtlasTexture_mt212")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_rlnu8")
+"texture": SubResource("AtlasTexture_tpxjn")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_4f8m3")
+"texture": SubResource("AtlasTexture_ph86y")
 }],
 "loop": true,
 "name": &"idle",
@@ -96,9 +96,8 @@ shape = SubResource("CapsuleShape3D_fdmdw")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 billboard = 2
 sprite_frames = SubResource("SpriteFrames_qxedq")
-animation = &"idle"
+animation = &"death"
 autoplay = "idle"
-frame_progress = 0.53169
 
 [node name="DeathSound" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("3_0ojuj")

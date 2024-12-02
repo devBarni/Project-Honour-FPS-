@@ -85,17 +85,17 @@ offset_bottom = 40.0
 
 [node name="GunAnimated" type="AnimatedSprite2D" parent="CanvasLayer/GunBase"]
 unique_name_in_owner = true
-position = Vector2(788, 501)
+position = Vector2(823, 575)
 scale = Vector2(0.568359, 0.568359)
 sprite_frames = SubResource("SpriteFrames_5t3i2")
 animation = &"shoot"
 autoplay = "idle"
 
 [node name="Crosshair" type="ColorRect" parent="CanvasLayer"]
-offset_left = 544.0
-offset_top = 317.0
-offset_right = 556.0
-offset_bottom = 329.0
+offset_left = 644.0
+offset_top = 349.0
+offset_right = 656.0
+offset_bottom = 361.0
 color = Color(0.929412, 0.929412, 0.929412, 0.290196)
 
 [node name="DeathScreen" type="Control" parent="CanvasLayer"]

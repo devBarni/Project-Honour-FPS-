@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://ha1ib5b4lpyb"]
+[gd_scene load_steps=4 format=3 uid="uid://ha1ib5b4lpyb"]
 
 [ext_resource type="Script" path="res://Scripts/MainMenu.cs" id="1_7m2l6"]
 [ext_resource type="PackedScene" uid="uid://b5ilmnkppoans" path="res://Scenes/texturebutton.tscn" id="2_x5i6d"]
+[ext_resource type="Texture2D" uid="uid://nbdq7o80yodd" path="res://Assets/Menu/TitleText.png" id="3_e4wc7"]
 
 [node name="mainmenu" type="Control"]
 layout_mode = 3
@@ -75,3 +76,15 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 Text = "Quit"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -256.5
+offset_top = 59.0
+offset_right = 256.5
+offset_bottom = 142.0
+grow_horizontal = 2
+texture = ExtResource("3_e4wc7")
