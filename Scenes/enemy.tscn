@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/Enemy.cs" id="1_dgukq"]
 [ext_resource type="Texture2D" uid="uid://dpemabwcqsr0p" path="res://Assets/Sprites/monster_sprites.png" id="2_n6hui"]
-[ext_resource type="AudioStream" uid="uid://b0ev5yka88pu6" path="res://Assets/Sounds/monster_die.wav" id="3_0ojuj"]
+[ext_resource type="AudioStream" uid="uid://di621a1n4vjvx" path="res://Assets/SFX/Enemies/hurt.wav" id="3_hvc7a"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_fdmdw"]
 margin = 0.0
@@ -100,6 +100,6 @@ animation = &"death"
 autoplay = "idle"
 
 [node name="DeathSound" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource("3_0ojuj")
+stream = ExtResource("3_hvc7a")
 unit_size = 2.0
 bus = &"Sfx"

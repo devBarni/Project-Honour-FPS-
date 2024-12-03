@@ -6,6 +6,7 @@ public partial class Player : CharacterBody3D
 {
 	// State
 	private const float SPEED = 5.0f;
+	private const float SHIFT_SPEED = 10.0f;
 	private const float MOUSE_SENS = 0.5f;
 	
 	// References for nodes
@@ -74,26 +75,29 @@ public partial class Player : CharacterBody3D
 	{
 		//Movement
 		if (_dead) return;
-		
+
 		// Get the input direction and handle player movement.
 		var inputDir = Input.GetVector("move_left", "move_right", "move_forwards", "move_backwards");
 		var direction = (Transform.Basis * new Vector3(inputDir.X, 0, inputDir.Y)).Normalized();
-		
+
+		// Determine speed based on whether SHIFT is pressed
+		float currentSpeed = Input.IsActionPressed("sprint") ? SHIFT_SPEED : SPEED;
+
 		if (direction != Vector3.Zero)
 		{
 			Velocity = new Vector3(
-				direction.X * SPEED,
+				direction.X * currentSpeed,
 				Velocity.Y,
-				direction.Z * SPEED);
+				direction.Z * currentSpeed);
 		}
 		else
 		{
 			Velocity = new Vector3(
-				Mathf.MoveToward(Velocity.X, 0, SPEED),
+				Mathf.MoveToward(Velocity.X, 0, currentSpeed),
 				Velocity.Y,
-				Mathf.MoveToward(Velocity.Z, 0, SPEED));
+				Mathf.MoveToward(Velocity.Z, 0, currentSpeed));
 		}
-		
+
 		MoveAndSlide();
 	}
 

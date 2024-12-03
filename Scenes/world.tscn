@@ -1,9 +1,10 @@
-[gd_scene load_steps=15 format=3 uid="uid://fmwvsaskkcc"]
+[gd_scene load_steps=16 format=3 uid="uid://fmwvsaskkcc"]
 
 [ext_resource type="PackedScene" uid="uid://dvmt0c8ibmhoa" path="res://Scenes/player.tscn" id="1_c5keh"]
 [ext_resource type="Texture2D" uid="uid://bw07qeejissqh" path="res://Assets/Textures/floortexture.jpg" id="1_tetmw"]
 [ext_resource type="PackedScene" uid="uid://dw7ae8uylu3sx" path="res://Scenes/enemy.tscn" id="2_qbhbb"]
 [ext_resource type="Texture2D" uid="uid://csiptl3vc08ii" path="res://Assets/Textures/walltexture.jpg" id="2_rwxhi"]
+[ext_resource type="AudioStream" uid="uid://ct2eo5qoc1ujw" path="res://Assets/Music/LetTheBattlesBegin.mp3" id="5_ekjad"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c2im0"]
 albedo_texture = ExtResource("1_tetmw")
@@ -38,7 +39,7 @@ background_color = Color(0.621524, 0.621524, 0.621524, 1)
 [node name="Enviornment" type="Node3D" parent="."]
 
 [node name="Ground" type="MeshInstance3D" parent="Enviornment"]
-transform = Transform3D(11.9586, 0, 0, 0, 23.0566, 0, 0, 0, 12.2613, 0, 0, 0)
+transform = Transform3D(68.9009, 0, 0, 0, 23.0566, 0, 0, 0, 62.126, -55.7128, -0.234741, -49.3379)
 material_override = SubResource("StandardMaterial3D_c2im0")
 mesh = SubResource("PlaneMesh_tg23p")
 
@@ -53,7 +54,7 @@ mesh = SubResource("BoxMesh_goqm8")
 shape = SubResource("ConcavePolygonShape3D_djtfd")
 
 [node name="Block2" type="MeshInstance3D" parent="Enviornment"]
-transform = Transform3D(1, 0, 0, 0, 12.2195, 0, 0, 0, 1, 4.75705, -4.30093, -2.2397)
+transform = Transform3D(6.84083, 0, 0, 0, 12.2195, 0, 0, 0, 1, 3.88745, -4.30093, -2.2397)
 material_override = SubResource("StandardMaterial3D_0lqim")
 mesh = SubResource("BoxMesh_goqm8")
 skeleton = NodePath("../Block")
@@ -64,7 +65,7 @@ skeleton = NodePath("../Block")
 shape = SubResource("ConcavePolygonShape3D_djtfd")
 
 [node name="Block3" type="MeshInstance3D" parent="Enviornment"]
-transform = Transform3D(1, 0, 0, 0, 6.91176, 0, 0, 0, 1, -4.50261, -1.27968, -0.31234)
+transform = Transform3D(5.11791, 0, 0, 0, 6.91176, 0, 0, 0, 1, -8.75871, -1.27968, -0.31234)
 material_override = SubResource("StandardMaterial3D_0lqim")
 mesh = SubResource("BoxMesh_goqm8")
 skeleton = NodePath("../Block2")
@@ -75,7 +76,7 @@ skeleton = NodePath("../Block2")
 shape = SubResource("ConcavePolygonShape3D_djtfd")
 
 [node name="Block4" type="MeshInstance3D" parent="Enviornment"]
-transform = Transform3D(0.999999, 0, 0, 0, 3.90952, 0, 0, 0, 0.999999, -2.47688, 0.42923, -5.88412)
+transform = Transform3D(6.76916, 0, 0, 0, 3.90952, 0, 0, 0, 0.999999, -7.9761, 0.42923, -5.88412)
 material_override = SubResource("StandardMaterial3D_0lqim")
 mesh = SubResource("BoxMesh_goqm8")
 skeleton = NodePath("../Block3")
@@ -86,7 +87,7 @@ skeleton = NodePath("../Block3")
 shape = SubResource("ConcavePolygonShape3D_djtfd")
 
 [node name="Block5" type="MeshInstance3D" parent="Enviornment"]
-transform = Transform3D(0.999999, 0, 0, 0, 2.21135, 0, 0, 0, 0.999999, -0.45115, 1.39585, 5.14549)
+transform = Transform3D(0.999999, 0, 0, 0, 2.21135, 0, 0, 0, 0.999999, -0.45115, 0.882289, -10.9881)
 material_override = SubResource("StandardMaterial3D_0lqim")
 mesh = SubResource("BoxMesh_goqm8")
 skeleton = NodePath("../Block4")
@@ -97,7 +98,7 @@ skeleton = NodePath("../Block4")
 shape = SubResource("ConcavePolygonShape3D_djtfd")
 
 [node name="Wall1" type="MeshInstance3D" parent="Enviornment"]
-transform = Transform3D(2.02554, 0, 0, 0, 7.22468, 0, 0, 0, 27.901, 11.5905, 3.73692, 1.1392)
+transform = Transform3D(2.02554, 0, 0, 0, 7.22468, 0, 0, 0, 128.885, 11.5905, 3.28816, -52.1999)
 material_override = SubResource("StandardMaterial3D_v4gyh")
 mesh = SubResource("BoxMesh_goqm8")
 skeleton = NodePath("../Block4")
@@ -108,7 +109,7 @@ skeleton = NodePath("../Block4")
 shape = SubResource("ConcavePolygonShape3D_djtfd")
 
 [node name="Wall2" type="MeshInstance3D" parent="Enviornment"]
-transform = Transform3D(0, 0, 27.901, 0, 7.22468, 0, -2.02554, 0, -1.90735e-06, 1.91614, 3.73692, 12.3879)
+transform = Transform3D(0, 0, 142.626, 0, 7.22468, 0, -2.02554, 0, -9.7501e-06, -58.788, 3.03355, 12.3879)
 material_override = SubResource("StandardMaterial3D_wepie")
 mesh = SubResource("BoxMesh_goqm8")
 skeleton = NodePath("../Block4")
@@ -119,7 +120,7 @@ skeleton = NodePath("../Block4")
 shape = SubResource("ConcavePolygonShape3D_djtfd")
 
 [node name="Wall3" type="MeshInstance3D" parent="Enviornment"]
-transform = Transform3D(-2.02554, 0, -3.12694e-06, 0, 7.22468, 0, 8.85394e-08, 0, -27.901, -12.1575, 3.73692, 0.442468)
+transform = Transform3D(-2.02204, 0, -1.21633e-05, 0, 7.21221, 0, 8.83866e-08, 0, -108.53, -12.1575, 3.15676, -42.752)
 material_override = SubResource("StandardMaterial3D_44176")
 mesh = SubResource("BoxMesh_goqm8")
 skeleton = NodePath("../Block4")
@@ -130,7 +131,7 @@ skeleton = NodePath("../Block4")
 shape = SubResource("ConcavePolygonShape3D_djtfd")
 
 [node name="Wall4" type="MeshInstance3D" parent="Enviornment"]
-transform = Transform3D(1.77079e-07, 0, -27.901, 0, 7.22468, 0, 2.02554, 0, 4.34653e-06, 0.28964, 3.73692, -12.3254)
+transform = Transform3D(1.77079e-07, 0, -134.991, 0, 7.22468, 0, 2.02554, 0, 2.10295e-05, -56.6774, 3.22744, -112.34)
 material_override = SubResource("StandardMaterial3D_44176")
 mesh = SubResource("BoxMesh_goqm8")
 skeleton = NodePath("../Block4")
@@ -141,6 +142,30 @@ surface_material_override/0 = SubResource("ORMMaterial3D_vdl84")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Enviornment/Wall4/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_djtfd")
 
+[node name="Wall5" type="MeshInstance3D" parent="Enviornment"]
+transform = Transform3D(2.02554, 0, 7.62939e-06, 0, 7.22468, 0, -2.38419e-07, 0, 78.621, -67.032, 3.15641, -73.784)
+material_override = SubResource("StandardMaterial3D_44176")
+mesh = SubResource("BoxMesh_goqm8")
+skeleton = NodePath("../Block4")
+surface_material_override/0 = SubResource("ORMMaterial3D_vdl84")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Enviornment/Wall5"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Enviornment/Wall5/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_djtfd")
+
+[node name="Wall6" type="MeshInstance3D" parent="Enviornment"]
+transform = Transform3D(2.02554, 0, 1.20161e-05, 0, 7.22468, 0, -2.38419e-07, 0, 123.826, -124.271, 3.29379, -49.9129)
+material_override = SubResource("StandardMaterial3D_44176")
+mesh = SubResource("BoxMesh_goqm8")
+skeleton = NodePath("../Block4")
+surface_material_override/0 = SubResource("ORMMaterial3D_vdl84")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Enviornment/Wall6"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Enviornment/Wall6/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_djtfd")
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_aqnfg")
 
@@ -149,21 +174,27 @@ transform = Transform3D(0.844684, 0.164024, -0.509515, 0.275634, 0.682691, 0.676
 shadow_enabled = true
 
 [node name="Player" parent="." instance=ExtResource("1_c5keh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.86742)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8.56328)
 
 [node name="EnemyContainer" type="Node" parent="."]
 
 [node name="Enemy" parent="EnemyContainer" instance=ExtResource("2_qbhbb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.37927, 0, -3.41407)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.83059, 0, -4.71428)
 
 [node name="Enemy2" parent="EnemyContainer" instance=ExtResource("2_qbhbb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.51185, 0, -3.41407)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.01434, 0, -3.41407)
 
 [node name="Enemy3" parent="EnemyContainer" instance=ExtResource("2_qbhbb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.194, 0, -8.37327)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.67539, 0, -8.37327)
 
 [node name="Enemy4" parent="EnemyContainer" instance=ExtResource("2_qbhbb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.37927, 0, 0.333445)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.63102, 0, -7.03401)
 
 [node name="Enemy5" parent="EnemyContainer" instance=ExtResource("2_qbhbb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.726953, 0, -6.28379)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.98671, 0, -9.1243)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_ekjad")
+volume_db = -24.0
+autoplay = true
+parameters/looping = true
