@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://b4pjsbs5bpb7o"]
+
+[ext_resource type="Texture2D" uid="uid://c36vxa2crxotd" path="res://Assets/Pickups/box_bullets.png" id="1_efq2c"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_sv71c"]
+
+[node name="AmmoPistol" type="Area3D"]
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+billboard = 2
+texture_filter = 0
+texture = ExtResource("1_efq2c")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_sv71c")
