@@ -1,4 +1,4 @@
-using Godot;
+/* using Godot;
 using System;
 
 public partial class AmmoPickup : Area3D
@@ -18,4 +18,4 @@ public partial class AmmoPickup : Area3D
 			QueueFree();
 		}
 	}
-}
+} */

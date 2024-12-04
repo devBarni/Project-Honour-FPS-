@@ -41,6 +41,7 @@ size_flags_vertical = 4
 
 [node name="arrow_left" type="AnimatedSprite2D" parent="control_arrow_l"]
 unique_name_in_owner = true
+visible = false
 texture_filter = 1
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_flapc")
@@ -90,6 +91,7 @@ size_flags_vertical = 4
 
 [node name="arrow_right" type="AnimatedSprite2D" parent="control_arrow_r"]
 unique_name_in_owner = true
+visible = false
 texture_filter = 1
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_flapc")
