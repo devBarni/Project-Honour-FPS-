@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://qdh8ilg1af8k"]
+
+[node name="HUD" type="CanvasLayer"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="ArmorLabel" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="HealthLabel" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="AmmoLabel" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
